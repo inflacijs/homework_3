@@ -1,7 +1,25 @@
 #container {
     display:grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 6fr));
-    grid-gap: 5px;
-    border: solid;
+    grid-gap: 10px;
+    
    
+}
+#container div {
+    border: solid;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+.others {
+    background-color: aquamarine;
+}
+.fizz {
+    background-color:violet;
+}
+.buzz {
+    background-color: blue;
+}
+.fizzBuzz {
+    background-color: red;
 }
