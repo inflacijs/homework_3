@@ -10,7 +10,7 @@ let maxValue = parseInt(document.getElementById('maxValue').value);
 
 
 clearDivs();
-   //console.log(minValue,maxValue,container);
+   
 
     for (let i=minValue; i <= maxValue; i++) {
         
@@ -19,39 +19,59 @@ clearDivs();
      iffunction(i, myDiv, myP);
       container.appendChild(myDiv);
       myDiv.appendChild(myP);
-    
-
-    
-    
        
     }
- 
-            
-     
-    
-
 
 }
 
 
-// function button_fizz() {
-//     const fizz = document.getElementsByClassName('fizz');
-//     const buzz = document.querySelectorAll('.buzz');
-//     const fizzBtn = document.getElementById('fizz-btn');
-//    fizzBtn.addEventListener('click', () =>{
-//        buzz.style.display = 'none';
-//        console.log("Button is working");
-//    });
-// }
+function buttonsRemover(id) {
+    const fizz = document.getElementsByClassName('fizz');
+    const buzz = document.getElementsByClassName('buzz');
+    const fizzBuzz = document.getElementsByClassName('fizzBuzz');
+    const others = document.getElementsByClassName('others');
+    
+    const fizzBtn = document.getElementById('fizz-btn');
+    const buzzBtn = document.getElementById('buzz-btn');
+    const fizzBuzzBtn = document.getElementById('fizzbuzz-btn');
 
-// button_fizz();
+    switch(id){
+        case "fizz-btn":
+                generate100div();
+            hider(buzz);
+            hider(fizzBuzz);
+            hider(others);
+            break;
+        case "buzz-btn":
+                generate100div();
+            hider(fizz);
+            hider(fizzBuzz);
+            hider(others);
+            break;
+        case "fizzbuzz-btn":
+                generate100div();
+            hider(fizz);
+            hider(buzz);
+            hider(others);
+                break;
+        default:
+            console.log("Ther is no id!");
+            
+    }
+   
+    
+}
 
 
 
+function hider(listname) {
+    console.log(listname);
+    for(j = 0; j < listname.length; j ++) {
+        console.log(listname[j]);
+        listname[j].style.display = "none";
+    }
 
-
-
-
+}
 
 generate100div();
 
