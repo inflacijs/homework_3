@@ -80,19 +80,19 @@ generate100div();
 function iffunction(i, myDiv, myP) {
     if (i % 15 == 0) {
         myDiv.id = "div" + i;
-        myDiv.className = "fizzBuzz";
+        myDiv.className = "fizzBuzz box";
         myP.innerText = i+" = Fizz/Buzz";
     } else if(i % 5 == 0) {
         myDiv.id = "div" + i;
-        myDiv.className = "buzz";
+        myDiv.className = "buzz box";
         myP.innerText = i+" = Buzz";
     } else if(i % 3 == 0) {
         myDiv.id = "div" + i;
-        myDiv.className = "fizz";
+        myDiv.className = "fizz box";
         myP.innerText = i+" = Fizz";
     } else {
         myDiv.id = "div" + i;
-        myDiv.className = "others";
+        myDiv.className = "others box";
         myP.innerText = i ;
         
     }
