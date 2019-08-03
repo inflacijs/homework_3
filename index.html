@@ -9,17 +9,33 @@
     <script src="scripts/fizz.js" defer></script>
 </head>
 <body>
-    <label >MIN NUMBER</label>
-    <input type="number" id="minValue" min="1" value="1" max="99" name="field" onchange="generate100div()" onpaste="return false">
-    <label >MAX NUMBER</label>
-    <input type="number" id="maxValue" min="2" value="100" max="100" name="field" onchange="generate100div()" onpaste="return false">
-    <button class="btn" id="generate" onclick="generate100div()">SUBMIT</button>
-    <br>
-        <button id="fizz-btn" class="btn" type="button" onclick="buttonsRemover(this.id)">Fizz</button> 
-        <br>
-         <button id="buzz-btn" class="btn" type="button" onclick="buttonsRemover(this.id)">Buzz</button>
-         <br>
-        <button id="fizzbuzz-btn" class="btn" type="button" onclick="buttonsRemover(this.id)">Fizz/Buzz</button>
+        <header>
+            <h2>Fizz Buzz</h2>
+        </header>
+    <div class="menu-container">
+        <div class="minDiv">
+            <label>MIN NUM : </label>
+            <input type="number" id="minValue" min="1" value="1" max="99" name="field" onchange="generate100div()"
+                onpaste="return false">
+        </div>
+        <div class="maxDiv">
+            <label>MAX NUM : </label>
+            <input type="number" id="maxValue" min="2" value="100" max="100" name="field" onchange="generate100div()"
+                onpaste="return false">
+        </div>
+        <div class="fb">
+            <button id="fizz-btn" class="btn" type="button" onclick="buttonsRemover(this.id)">Fizz</button>
+        </div>
+        <div class="bb">
+            <button id="buzz-btn" class="btn" type="button" onclick="buttonsRemover(this.id)">Buzz</button>
+        </div>
+        <div class="fbb">
+            <button id="fizzbuzz-btn" class="btn" type="button" onclick="buttonsRemover(this.id)">Fizz/Buzz</button>
+        </div>
+        <div class="refresh">
+        <button id="refresh-btn" class="btn" type="button" onclick="generate100div()">Refresh</button>
+    </div>
+    </div>
     
     <main id="app">
 <div id="container"></div>

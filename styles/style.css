@@ -1,13 +1,145 @@
+html {
+    box-sizing: border-box;
+    background-color: #dedede;
+}
+
+header {
+    text-align: center;
+    font-size: 38px;
+}
+/* here starts all about menu container */
+.menu-container {
+    margin:10px;
+    margin-bottom: 30px;
+    background-color: rgb(235, 210, 210);
+    padding:20px;
+    display: grid;
+    grid-template-rows:   1fr  1fr;
+    grid-template-columns:  auto auto auto auto;
+    grid-gap: 20px;
+    grid-template-areas:   
+    "minDiv minDiv maxDiv maxDiv  "
+    "bb  fb fbb refresh"
+    ;
+    border-radius: 5px;
+    
+    
+}
+.minDiv {
+        grid-area: minDiv;
+        
+}
+.maxDiv {
+        grid-area: maxDiv;
+}
+
+.fb {
+    grid-area: fb;
+}
+.bb {
+    grid-area: bb;
+}
+.fbb {
+    grid-area: fbb;
+}
+.refresh {
+    grid-area: refresh;
+}
+
+input[type=number] {
+    background-color:  #a20dbd;
+    color: white;
+}
+
+#maxValue, #minValue {
+    height: 48px;
+    font-size: 27px;
+    border-radius: 5px;
+    border: none;
+}
+label {
+    font-size: 26px;
+    font-weight: bold;
+    font-family:Trebuchet MS;
+}
+
+.btn {
+  -moz-box-shadow:inset 0px 1px 0px 0px #e184f3;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #e184f3;
+  box-shadow:inset 0px 1px 0px 0px #e184f3;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c123de), color-stop(1, #a20dbd));
+  background:-moz-linear-gradient(top, #c123de 5%, #a20dbd 100%);
+  background:-webkit-linear-gradient(top, #c123de 5%, #a20dbd 100%);
+  background:-o-linear-gradient(top, #c123de 5%, #a20dbd 100%);
+  background:-ms-linear-gradient(top, #c123de 5%, #a20dbd 100%);
+  background:linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c123de', endColorstr='#a20dbd',GradientType=0);
+  background-color:#c123de;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #a511c0;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Trebuchet MS;
+  font-size:15px;
+  font-weight:bold;
+  padding:17px 50px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #9b14b3;
+  max-width:auto;
+}
+.btn:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #a20dbd), color-stop(1, #c123de));
+  background:-moz-linear-gradient(top, #a20dbd 5%, #c123de 100%);
+  background:-webkit-linear-gradient(top, #a20dbd 5%, #c123de 100%);
+  background:-o-linear-gradient(top, #a20dbd 5%, #c123de 100%);
+  background:-ms-linear-gradient(top, #a20dbd 5%, #c123de 100%);
+  background:linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a20dbd', endColorstr='#c123de',GradientType=0);
+  background-color:#a20dbd;
+}
+.btn:active {
+  position:relative;
+  top:1px;
+}
+@media (max-width: 750px) {
+    .menu-container {
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "minDiv maxDiv"
+    "fb bb"
+    "fbb refresh";
+    }
+}
+@media (max-width: 440px) {
+    .menu-container {
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "minDiv maxDiv"
+    "fb bb"
+    "fbb fbb"
+    "refresh refresh";
+    }
+    .box {
+        width:150px;
+    }
+}
+
+/* here ends all about menu container */
+/* Here starts 100 divs css */
 #container {
     display:grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 6fr));
     grid-gap: 25px;
-    
-   
+    padding: 20px;
+    margin:20px;
+       
 }
-#container div {
-    
-}
+
 .others {
     background-color: aquamarine;
 }
@@ -15,13 +147,13 @@
     background-color:violet;
 }
 .buzz {
-    background-color: blue;
+    background-color: lightblue;
 }
 .fizzBuzz {
-    background-color: red;
+    background-color: pink;
 }
+/* .box class responsible about 100divs hover */
 .box {
-    /* position: relative; */
     
     display: flex;
     justify-content: center;
@@ -60,4 +192,8 @@
   .box:hover::after {
       opacity: 1;
   }
+  /* Here ends all about 100 divs */
+
+  
+    
   
