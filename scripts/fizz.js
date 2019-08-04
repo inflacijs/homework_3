@@ -12,67 +12,17 @@ let maxValue = parseInt(document.getElementById('maxValue').value);
 clearDivs();
    
 
-    for (let i=minValue; i <= maxValue; i++) {
+    for (let i=minValue; i <= maxValue && i < 101; i++) {
         
         const myDiv = document.createElement("div");
       const myP =  document.createElement("p");
-     iffunction(i, myDiv, myP);
+      iffunction(i, myDiv, myP);
       container.appendChild(myDiv);
       myDiv.appendChild(myP);
        
     }
 
 }
-
-
-function buttonsRemover(id) {
-    const fizz = document.getElementsByClassName('fizz');
-    const buzz = document.getElementsByClassName('buzz');
-    const fizzBuzz = document.getElementsByClassName('fizzBuzz');
-    const others = document.getElementsByClassName('others');
-    
-    const fizzBtn = document.getElementById('fizz-btn');
-    const buzzBtn = document.getElementById('buzz-btn');
-    const fizzBuzzBtn = document.getElementById('fizzbuzz-btn');
-
-    switch(id){
-        case "fizz-btn":
-                generate100div();
-            hider(buzz);
-            hider(fizzBuzz);
-            hider(others);
-            break;
-        case "buzz-btn":
-                generate100div();
-            hider(fizz);
-            hider(fizzBuzz);
-            hider(others);
-            break;
-        case "fizzbuzz-btn":
-                generate100div();
-            hider(fizz);
-            hider(buzz);
-            hider(others);
-                break;
-        default:
-            console.log("Ther is no id!");
-            
-    }
-   
-    
-}
-
-
-
-function hider(listname) {
-    console.log(listname);
-    for(j = 0; j < listname.length; j ++) {
-        console.log(listname[j]);
-        listname[j].style.display = "none";
-    }
-
-}
-
 generate100div();
 
 
@@ -98,3 +48,82 @@ function iffunction(i, myDiv, myP) {
     }
     
 }
+function hider(listname) {
+    console.log(listname);
+    for(j = 0; j < listname.length; j ++) {
+        console.log(listname[j]);
+        listname[j].style.display = "none";
+    }
+
+}
+function buttonsRemover(id) {
+    const fizz = document.getElementsByClassName('fizz');
+    const buzz = document.getElementsByClassName('buzz');
+    const fizzBuzz = document.getElementsByClassName('fizzBuzz');
+    const others = document.getElementsByClassName('others');
+    
+    const fizzBtn = document.getElementById('fizz-btn');
+    const buzzBtn = document.getElementById('buzz-btn');
+    const fizzBuzzBtn = document.getElementById('fizzbuzz-btn');
+
+    switch(id){
+        case "fizz-btn":
+            generate100div();
+            hider(buzz);
+            hider(fizzBuzz);
+            hider(others);
+            break;
+        case "buzz-btn":
+            generate100div();
+            hider(fizz);
+            hider(fizzBuzz);
+            hider(others);
+            break;
+        case "fizzbuzz-btn":
+            generate100div();
+            hider(fizz);
+            hider(buzz);
+            hider(others);
+                break;
+        default:
+            console.log("Ther is no id!");       
+    }
+       
+}
+
+let input = document.querySelector("#minValue");
+input.oninput = handleInput;
+let input2 = document.querySelector("#maxValue");
+input2.oninput = handleInput2;
+let refresh = document.querySelector("#refresh-btn")
+refresh.onclick = handleBtn;
+input2.setAttribute("max", 100);
+function handleInput(ev){
+    console.log("Value changed" + ev.target.value);
+    minValue = parseInt(ev.target.value);
+    console.log("the new min value ="+ minValue);
+    generate100div();
+}
+function handleInput2(event){
+    
+    console.log("Value changed" + event.target.value);
+    maxValue = parseInt(event.target.value);
+    console.log("the new max value ="+ maxValue);
+    over100();
+    generate100div();
+}
+function handleBtn(e) {
+    console.log("Handle button!");
+    document.getElementById('minValue').value = 1;
+    document.getElementById('maxValue').value = 100;
+    generate100div();
+    
+}
+function over100(){
+if(maxValue > 100){
+    alert('Number is incorect. Max value is 100!');
+    document.getElementById('maxValue').value = 100;
+
+}
+}
+;
