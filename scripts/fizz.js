@@ -102,6 +102,7 @@ function handleInput(ev){
     console.log("Value changed" + ev.target.value);
     minValue = parseInt(ev.target.value);
     console.log("the new min value ="+ minValue);
+    under1();
     generate100div();
 }
 function handleInput2(event){
@@ -126,4 +127,10 @@ if(maxValue > 100){
 
 }
 }
-;
+function under1(){
+    if(minValue < 1){
+        alert('Number is incorect. Min value is 1!');
+        document.getElementById('minValue').value = 1;
+    
+    }
+    }
