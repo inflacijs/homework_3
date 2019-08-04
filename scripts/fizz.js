@@ -114,10 +114,8 @@ function handleInput2(event){
     generate100div();
 }
 function handleBtn(e) {
-    console.log("Handle button!");
-    document.getElementById('minValue').value = 1;
-    document.getElementById('maxValue').value = 100;
-    generate100div();
+    console.log("Clear all divs!");
+    clearDivs();
     
 }
 function over100(){
